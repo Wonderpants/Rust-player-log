@@ -5,7 +5,7 @@ import valve.source.a2s
 import valve.source.master_server
 from discord import Webhook, RequestsWebhookAdapter
 
-webhook = Webhook.partial(698326117714493542, '3qUP-LH37M0fDFEbwydqeCd6LIXdu7CE-bCZ-1B-dRQD4sqgVNZtB3xm61Vxf0slDyrI', adapter=RequestsWebhookAdapter())
+webhook = Webhook.partial(698337438677991465, 'gVUlHzwt1KXjw-dGaI88_S7V3dhxZr6rxQOb-2AMrA3VYZE7iTvSq651TmLTAxVe8Ck8', adapter=RequestsWebhookAdapter())
 
 wanted = [
     "Таныоусхка",
