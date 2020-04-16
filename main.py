@@ -12,7 +12,7 @@ wanted = [
     "BiGuMiG"
 ]
 
-address = ('51.75.231.96', 28015)
+address = ('92.118.16.106', 28025)
 
 
 async def main():
