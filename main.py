@@ -23,7 +23,7 @@ async def main():
                 info = query.info()
                 players = [p['name'] for p in query.players()['players']]
                 if playersFound:
-                    em = Embed(title="{server_name}".format(**info))
+                    em = Embed(title="[EU] Corrosion PvE")
                     em.set_footer(text="{player_count}/{max_players}".format(**info) + f" - {int(query.ping())}ms")
                     for player in players:
                         if player not in playersFound:
