@@ -21,7 +21,11 @@ async def main():
         try:
             with valve.source.a2s.ServerQuerier(address) as query:
                 info = query.info()
-                players = [p['name'] for p in query.players()['players']]
+                try:
+                    players = [p['name'] for p in query.players()['players']]
+                except Exception as error:
+                    print(query.players())
+                    continue
                 if playersFound:
                     em = Embed(title="[EU] Corrosion PvE")
                     em.set_footer(text="{player_count}/{max_players}".format(**info) + f" - {int(query.ping())}ms")
@@ -30,11 +34,13 @@ async def main():
                             em.colour = Colour.green()
                             em.description = f"{player} joined."
                             webhook.send(embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
+                            print(em.description)
                     for player in playersFound:
                         if player not in players:
                             em.colour = Colour.red()
                             em.description = f"{player} left."
                             webhook.send(embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
+                            print(em.description)
                 playersFound = players
         except Exception as error:
             print('\n'.join(traceback.format_exception(type(error), error, error.__traceback__)))
