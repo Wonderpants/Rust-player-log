@@ -18,6 +18,7 @@ address = ('164.132.207.225', 28015)
 async def main():
     playersFound = []
     while True:
+        print('1')
         try:
             with valve.source.a2s.ServerQuerier(address) as query:
                 info = query.info()
