@@ -23,22 +23,20 @@ async def main():
                 info = query.info()
                 players = [p['name'] for p in query.players()['players']]
                 if playersFound:
-                    em = Embed()
+                    em = Embed(title="{server_name}".format(**info))
+                    em.set_footer(text="{player_count}/{max_players}".format(**info) + f" - {int(query.ping())}ms")
                     for player in players:
                         if player not in playersFound:
                             em.colour = Colour.green()
                             em.description = f"{player} joined."
-                            em.set_footer(text="{player_count}/{max_players}".format(**info))
                             webhook.send(embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
                     for player in playersFound:
                         if player not in players:
                             em.colour = Colour.red()
                             em.description = f"{player} left."
-                            em.set_footer(text="{player_count}/{max_players}".format(**info))
                             webhook.send(embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
                 playersFound = players
         except Exception as error:
-            # print(error)
             print('\n'.join(traceback.format_exception(type(error), error, error.__traceback__)))
         await asyncio.sleep(10)
 
