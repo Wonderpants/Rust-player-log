@@ -1,2 +1,3 @@
-python-valve
+git+https://github.com/serverstf/python-valve.git@963086a385b771a9d58a757814a5cea8111c1c8b
 discord.py
+monotonic==1.5
