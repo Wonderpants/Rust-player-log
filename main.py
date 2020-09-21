@@ -36,9 +36,10 @@ async def main():
                             webhook.send(content=content, embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
                     for player in playersFound:
                         if player not in players:
+                            content = "<@&744616236104810617>" if player.lower() in staff else ""
                             em.colour = Colour.red()
                             em.description = f"{player} left."
-                            webhook.send(embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
+                            webhook.send(content=content, embed = em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
                             print(em.description)
                 playersFound = players
         except Exception as error:
