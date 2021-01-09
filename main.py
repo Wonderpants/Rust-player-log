@@ -11,7 +11,7 @@ staff = [
     "rifle.ak", "alex", "usekevin", "bill_san", "squidward", "country_sass"
 ]
 
-address = ('51.38.60.72', 27050)
+address = ('151.80.111.43', 28015)
 
 
 async def main():
