@@ -8,7 +8,7 @@ import traceback
 
 webhook = Webhook.partial(698337438677991465, 'gVUlHzwt1KXjw-dGaI88_S7V3dhxZr6rxQOb-2AMrA3VYZE7iTvSq651TmLTAxVe8Ck8', adapter=RequestsWebhookAdapter())
 staff = [
-    "rifle.ak", "alex", "usekevin", "bill_san", "squidward", "country_sass"
+    "ket", "! leado", "hajna", "kerpacki", "witch_king", "the_ring"
 ]
 
 address = ('151.80.111.43', 28015)
@@ -30,13 +30,13 @@ async def main():
                     em.set_footer(text="{player_count}/{max_players}".format(**info) + f" - {int(query.ping())}ms")
                     for player in players:
                         if player not in playersFound:
-                            content = "<@&744616236104810617>" if player.lower() in staff else ""
+                            content = "<@&797615807769083945>" if player.lower() in staff else ""
                             em.colour = Colour.green()
                             em.description = f"{player} joined."
                             webhook.send(content=content, embed=em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
                     for player in playersFound:
                         if player not in players:
-                            content = "<@&744616236104810617>" if player.lower() in staff else ""
+                            content = "<@&797615807769083945>" if player.lower() in staff else ""
                             em.colour = Colour.red()
                             em.description = f"{player} left."
                             webhook.send(content=content, embed=em, username="{server_name}".format(**info), avatar_url='https://www.gamegrin.com/assets/games/rust/primary-image/rustlogo.jpg')
