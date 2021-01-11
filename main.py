@@ -11,7 +11,7 @@ staff = [
     "ket", "! leado", "hajna", "kerpacki", "witch_king", "the_ring"
 ]
 
-address = ('151.80.111.43', 28015)
+address = ('93.189.91.136', 28015)
 
 
 async def main():
