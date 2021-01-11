@@ -8,7 +8,7 @@ import traceback
 
 webhook = Webhook.partial(698337438677991465, 'gVUlHzwt1KXjw-dGaI88_S7V3dhxZr6rxQOb-2AMrA3VYZE7iTvSq651TmLTAxVe8Ck8', adapter=RequestsWebhookAdapter())
 staff = [
-    "ket", "! leado", "hajna", "kerpacki", "witch_king", "the_ring"
+    "Habu", "Lone Wolf", "zlosnica", "ggizi"
 ]
 
 address = ('93.189.91.136', 28015)
